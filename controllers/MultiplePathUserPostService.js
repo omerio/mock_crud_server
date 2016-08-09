@@ -7,7 +7,8 @@ exports.deleteUserPostWithMultiplePath = function(args, res, next) {
   * post_id (Long)
   **/
   // no response value expected for this operation
-  res.end();
+  res.setHeader('Content-Type', 'application/json');
+  res.end("{}");
 }
 
 exports.readUserPostWithMultiplePath = function(args, res, next) {
