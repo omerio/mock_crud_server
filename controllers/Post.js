@@ -8,7 +8,7 @@ var Post = require('./PostService');
 
 
 module.exports.addPost = function addPost (req, res, next) {
-    var send_1 = "xaZfTu56TPBzFTxypjmRFySRLxzJcQ1m2vqtwDUY34bf5d25!ede9b31b31d14a68b91bad48dc0a1e400000000000000000";
+    var send_1 = "-mzBAF1UFssV7H1VDrJuXQ45AZlkmfNEoMUxocsGae1f9f59!cba9cef300b64e3e812698fd7a8b6bff0000000000000000";
     var type = {'Content-Type': 'application/json'};
 
     var consumerKey = oauth.getConsumerKey(req);
@@ -19,7 +19,7 @@ module.exports.addPost = function addPost (req, res, next) {
         return;
     }
 
-    if (consumerKey != "\"xaZfTu56TPBzFTxypjmRFySRLxzJcQ1m2vqtwDUY34bf5d25!ede9b31b31d14a68b91bad48dc0a1e400000000000000000\"") {
+    if (consumerKey != ("\"" + send_1 + "\"")) {
         res.writeHead(500, type);
         res.end(JSON.stringify({error: "Consumer Key should be: " + send_1}));
         return;
