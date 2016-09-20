@@ -16,6 +16,40 @@ basePath: "/mock_crud_server"
 schemes:
 - "http"
 paths:
+  /postsWithConsumerKeyCheck:
+    post:
+      tags:
+      - "post With Consumer Key Check"
+      summary: "Add a new Post"
+      description: "Add a new Post Description"
+      operationId: "addPost"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Post object that needs to be added"
+        required: false
+        schema:
+          $ref: "#/definitions/Post"
+      responses:
+        200:
+          description: "Created a new Post"
+          schema:
+            $ref: "#/definitions/Post"
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "Post"
+      x-samples:
+      - name: "create_post"
+        request:
+          application/json: "{\n  \"title\": \"Title of Post\",\n  \"body\": \"Some\
+            \ text as a body\"\n}"
+        response:
+          application/json: "{\n  \"id\": 1,\n  \"title\": \"My Title\",\n  \"body\"\
+            : \"some body text\",\n  \"userId\": 1\n}"
   /posts:
     get:
       tags:
@@ -721,3 +755,4 @@ definitions:
         type: "string"
         example: "some delivery instructions text"
         description: "some delivery instructions text"
+  
