@@ -14,6 +14,14 @@ module.exports.deleteUser = function deleteUser (req, res, next) {
   User.deleteUser(req.swagger.params, res, next);
 };
 
+module.exports.deleteUser2 = function deleteUser2 (req, res, next) {
+  User.deleteUser2(req.swagger.params, res, next);
+};
+
+module.exports.deleteUser3 = function deleteUser3 (req, res, next) {
+  User.deleteUser3(req.swagger.params, res, next);
+};
+
 module.exports.listUsers = function listUsers (req, res, next) {
   User.listUsers(req.swagger.params, res, next);
 };

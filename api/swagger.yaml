@@ -479,6 +479,64 @@ paths:
           application/json: "{\n  \"id\": \"1\"\n}"
         response:
           application/json: "{\n}"
+  /users200/{id}:
+    delete:
+      tags:
+      - "user"
+      x-action: "delete200"
+      summary: "Deletes a User"
+      description: "Deletes a User Description"
+      operationId: "deleteUser2"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "User id to delete"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "Deleted"
+        400:
+          description: "Invalid User value"
+      x-swagger-router-controller: "User"
+      x-samples:
+      - name: "delete_user"
+        request:
+          application/json: "{\n  \"id\": \"1\"\n}"
+        response:
+          application/json: "{\n}"
+  /users204/{id}:
+    delete:
+      tags:
+      - "user"
+      x-action: "delete204"
+      summary: "Deletes a User"
+      description: "Deletes a User Description"
+      operationId: "deleteUser3"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "User id to delete"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        204:
+          description: "Deleted"
+        400:
+          description: "Invalid User value"
+      x-swagger-router-controller: "User"
+      x-samples:
+      - name: "delete_user"
+        request:
+          application/json: "{\n  \"id\": \"1\"\n}"
+        response:
+          application/json: "{\n}"
   /users/{user_id}/post/{post_id}:
     get:
       tags:

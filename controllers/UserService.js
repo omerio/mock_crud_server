@@ -45,6 +45,26 @@ exports.deleteUser = function(args, res, next) {
   res.end("{}");
 }
 
+
+exports.deleteUser2 = function(args, res, next) {
+  /**
+   * parameters expected in the args:
+  * id (Long)
+  **/
+  // no response value expected for this operation
+  res.end();
+}
+
+exports.deleteUser3 = function(args, res, next) {
+  /**
+   * parameters expected in the args:
+  * id (Long)
+  **/
+  // no response value expected for this operation
+  res.statusCode = 204;
+  res.end();
+}
+
 exports.listUsers = function(args, res, next) {
   /**
    * parameters expected in the args:
